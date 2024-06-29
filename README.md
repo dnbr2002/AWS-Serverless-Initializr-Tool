@@ -1,14 +1,10 @@
-# Spring Initializr Clone
+# AWS-Serverless-Initializr-Tool
 
-This project is a clone of the [Spring Initializr](https://start.spring.io/) web application built using React.js and Material-UI for the frontend and Node.js for the backend. It allows users to generate a Spring Boot project by selecting various options.
+This project is a web application built using React.js and Material-UI for the frontend and Node.js for the backend. It allows users to generate a config files needed to deploy projects to the cloud via Ansible Templates (In progress).
 
 ## Features
 
-- Generate Spring Boot projects
-- Select project type (Maven or Gradle)
-- Select programming language (Java, Kotlin, or Groovy)
-- Choose Spring Boot version
-- Add a custom function name
+- Add a features here
 
 ## Prerequisites
 
