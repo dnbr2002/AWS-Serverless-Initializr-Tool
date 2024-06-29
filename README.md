@@ -19,8 +19,8 @@ Make sure you have the following installed on your local development environment
 1. Clone the repository:
 
    ```sh
-   git clone https://github.com/yourusername/spring-initializr-clone.git
-   cd spring-initializr-clone
+   https://github.com/dnbr2002/AWS-Serverless-Initializr-Tool.git
+   cd AWS-Serverless-Initializr-Tool
 Install dependencies for the backend:
 
 sh
@@ -85,8 +85,3 @@ Feel free to open issues or submit pull requests if you have any suggestions or 
 
 License
 This project is licensed under the MIT License. See the LICENSE file for more details.
-
-less
-Copy code
-
-Replace `"https://github.com/yourusername/spring-initializr-clone.git"` with the actual URL of your r
