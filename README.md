@@ -1,6 +1,3 @@
-Sure! Here's a `README.md` for your Spring Initializr Clone app using React and Material-UI with a Node.js backend:
-
-```markdown
 # Spring Initializr Clone
 
 This project is a clone of the [Spring Initializr](https://start.spring.io/) web application built using React.js and Material-UI for the frontend and Node.js for the backend. It allows users to generate a Spring Boot project by selecting various options.
