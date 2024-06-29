@@ -53,9 +53,7 @@ The frontend will start on http://localhost:3000.
 Open your browser and navigate to http://localhost:3000 to see the application in action.
 
 Project Structure
-php
-Copy code
-spring-initializr-clone/
+AWS-Serverless-Initializr-Tool/
 ├── client/                     # React frontend
 │   ├── public/
 │   ├── src/
@@ -73,6 +71,7 @@ spring-initializr-clone/
 │   └── ...
 ├── README.md
 └── ...
+
 Customization
 Changing the Theme
 The theme of the Material-UI components can be customized in the client/src/theme.js file. Adjust the palette property to change colors and other styling options.
