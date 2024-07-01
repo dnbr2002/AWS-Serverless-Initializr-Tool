@@ -15,10 +15,12 @@ import {
   FormLabel,
   RadioGroup,
   FormControlLabel,
-  Radio
+  Radio,
+  Box
 } from '@mui/material';
 import { ThemeProvider } from '@mui/material/styles';
 import theme from './theme';
+import logo from './images/logo192.png';
 
 const Home = () => {
   const [functionName, setFunctionName] = React.useState('');
@@ -80,7 +82,16 @@ const App = () => {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <AppBar position="fixed">
-        <Toolbar>
+      <Toolbar>
+          <Box
+            component="img"
+            src={logo}
+            alt="Logo"
+            sx={{
+              height: 40,
+              marginRight: 2,
+            }}
+          />
           <Typography variant="h6" noWrap>
             SSLS Initializr Tool
           </Typography>

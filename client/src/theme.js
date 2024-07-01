@@ -1,8 +1,12 @@
+// client/src/theme.js
 import { createTheme } from '@mui/material/styles';
 
 const theme = createTheme({
   palette: {
     primary: {
+      main: '#fb7e14',
+    },
+    secondary: {
       main: '#ffffff',
     },
     background: {
@@ -11,6 +15,15 @@ const theme = createTheme({
     },
     text: {
       primary: '#000000',
+    },
+  },
+  components: {
+    MuiAppBar: {
+      styleOverrides: {
+        root: {
+          backgroundColor: '#ffffff',
+        },
+      },
     },
   },
 });
