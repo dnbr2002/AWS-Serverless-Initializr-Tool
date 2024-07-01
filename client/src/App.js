@@ -26,53 +26,74 @@ const Home = () => {
   const [functionName, setFunctionName] = React.useState('');
   const [language, setLanguage] = React.useState('Python');
   const [templateType, setTemplateType] = React.useState('Lambda');
+  const [formData, setFormData] = React.useState(null);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const data = {
+      functionName,
+      language,
+      templateType
+    };
+
+    setFormData(data);
+  };
 
   return (
     <Container>
       <Typography variant="h4" gutterBottom>
         Generate SSLS Configuration Files
       </Typography>
-      <Grid container spacing={3}>
-        <Grid item xs={12} sm={6}>
-          <Paper style={{ padding: 16 }}>
-            <TextField
-              label="Function Name"
-              fullWidth
-              value={functionName}
-              onChange={(e) => setFunctionName(e.target.value)}
-              style={{ marginBottom: 16 }}
-            />
-            <FormControl component="fieldset" style={{ marginBottom: 16 }}>
-              <FormLabel component="legend">Language</FormLabel>
-              <RadioGroup
-                aria-label="language"
-                name="language"
-                value={language}
-                onChange={(e) => setLanguage(e.target.value)}
-                row
+      <form onSubmit={handleSubmit}>
+        <Grid container spacing={3}>
+          <Grid item xs={12} sm={6}>
+            <Paper style={{ padding: 16 }}>
+              <TextField
+                label="Function Name"
+                fullWidth
+                value={functionName}
+                onChange={(e) => setFunctionName(e.target.value)}
+                style={{ marginBottom: 16 }}
+              />
+              <FormControl component="fieldset" style={{ marginBottom: 16 }}>
+                <FormLabel component="legend">Language</FormLabel>
+                <RadioGroup
+                  aria-label="language"
+                  name="language"
+                  value={language}
+                  onChange={(e) => setLanguage(e.target.value)}
+                  row
+                >
+                  <FormControlLabel value="python" control={<Radio />} label="Python" />
+                  <FormControlLabel value="node.js" control={<Radio />} label="Node.js" />
+                </RadioGroup>
+              </FormControl>
+              <TextField
+                label="Template Type"
+                select
+                fullWidth
+                value={templateType}
+                onChange={(e) => setTemplateType(e.target.value)}
+                style={{ marginTop: 16 }}
               >
-                <FormControlLabel value="python" control={<Radio />} label="Python" />
-                <FormControlLabel value="node.js" control={<Radio />} label="Node.js" />
-              </RadioGroup>
-            </FormControl>
-            <TextField
-              label="Template Type"
-              select
-              fullWidth
-              value={templateType}
-              onChange={(e) => setTemplateType(e.target.value)}
-              style={{ marginTop: 16 }}
-            >
-              <MenuItem value="2.5.4">Lambda</MenuItem>
-              <MenuItem value="2.4.5">Lambda+SQS</MenuItem>
-              <MenuItem value="2.3.10">Lambda+APIGateway</MenuItem>
-            </TextField>
-            <Button variant="contained" color="primary" style={{ marginTop: 16 }}>
-              Generate
-            </Button>
-          </Paper>
+                <MenuItem value="Lambda">Lambda</MenuItem>
+                <MenuItem value="Lambda+SQS">Lambda+SQS</MenuItem>
+                <MenuItem value="Lambda+APIGateway">Lambda+APIGateway</MenuItem>
+              </TextField>
+              <Button type="submit" variant="contained" color="primary" style={{ marginTop: 16 }}>
+                Generate
+              </Button>
+            </Paper>
+          </Grid>
         </Grid>
-      </Grid>
+      </form>
+      {formData && (
+        <Paper style={{ marginTop: 16, padding: 16 }}>
+          <Typography variant="h6">Form Data JSON:</Typography>
+          <pre>{JSON.stringify(formData, null, 2)}</pre>
+        </Paper>
+      )}
     </Container>
   );
 };
@@ -82,7 +103,7 @@ const App = () => {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <AppBar position="fixed">
-      <Toolbar>
+        <Toolbar>
           <Box
             component="img"
             src={logo}
